@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=compose_starter
+PRODUCT_BUNDLE_IDENTIFIER=com.eitanliu.compose.starter.compose_starter$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
