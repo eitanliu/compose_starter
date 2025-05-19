@@ -1,3 +1,4 @@
+import org.gradle.internal.os.OperatingSystem
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -10,15 +11,24 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
 }
 
+
+private val os get() = OperatingSystem.current()
+private val arch get() = System.getProperty("os.arch")
+private val isArm64 get() = arch == "aarch64"
+
+val androidEnable = true
+val iosEnable get() = os.isMacOsX
+val desktopEnable = true
+
 kotlin {
-    androidTarget {
+    if (androidEnable) androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
 
-    listOf(
+    if (iosEnable) listOf(
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
@@ -29,7 +39,7 @@ kotlin {
         }
     }
 
-    jvm("desktop")
+    if (desktopEnable) jvm("desktop")
 
     sourceSets {
         val desktopMain by getting
@@ -39,19 +49,27 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
+            implementation(compose.animation)
+            implementation(compose.animationGraphics)
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material3)
             implementation(compose.ui)
+            implementation(compose.material3)
+            implementation(compose.material3AdaptiveNavigationSuite)
+            implementation(compose.materialIconsExtended)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
+            implementation(project.dependencies.platform(libs.compose.bom))
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.compose.multiplatform.navigation)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-        desktopMain.dependencies {
+        if (desktopEnable) getByName("desktopMain").dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
         }
@@ -89,7 +107,7 @@ dependencies {
     debugImplementation(compose.uiTooling)
 }
 
-compose.desktop {
+if (desktopEnable) compose.desktop {
     application {
         mainClass = "com.eitanliu.compose.app.MainKt"
 
