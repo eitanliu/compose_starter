@@ -35,3 +35,4 @@ plugins {
 
 rootProject.name = "compose_starter"
 include(":app")
+include(":starter")

@@ -42,7 +42,6 @@ kotlin {
     if (desktopEnable) jvm("desktop")
 
     sourceSets {
-        val desktopMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
@@ -69,6 +68,8 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
+
+        // val desktopMain by getting
         if (desktopEnable) getByName("desktopMain").dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
