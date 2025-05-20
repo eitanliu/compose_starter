@@ -59,7 +59,7 @@ kotlin {
             implementation(project.dependencies.platform(libs.compose.bom))
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(libs.compose.multiplatform.navigation)
+            implementation(libs.compose.navigation)
         }
 
         commonTest.dependencies {

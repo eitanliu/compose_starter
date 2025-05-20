@@ -38,3 +38,12 @@ dependencies {
 
 [Kotlin Multiplatform Development](https://www.jetbrains.com/help/kotlin-multiplatform-dev)  
 [Kotlin Multiplatform Overview | Android](https://developer.android.com/kotlin/multiplatform)  
+
+### Dev Repositories
+
+[Maven](https://maven.pkg.jetbrains.space/public/p/space/maven)  
+[Compose](https://maven.pkg.jetbrains.space/public/p/compose/dev/)  
+[KtorEAP](https://maven.pkg.jetbrains.space/public/p/ktor/eap/)  
+[KotlinIDE](https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-ide/)  
+[coroutines](https://maven.pkg.jetbrains.space/public/p/kotlinx-coroutines/maven)  
+[grpc](https://maven.pkg.jetbrains.space/public/p/krpc/grpc)  

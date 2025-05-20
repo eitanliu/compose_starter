@@ -15,6 +15,12 @@ allprojects {
         resolutionStrategy {
             force(libs.androidx.core)
             force(libs.androidx.core.ktx)
+            force(libs.androidx.lifecycle.common)
+            force(libs.androidx.lifecycle.viewmodel.compose)
+            force(libs.androidx.lifecycle.viewmodel.savedstate)
+            force(libs.androidx.lifecycle.runtime)
+            force(libs.androidx.lifecycle.runtime.compose)
+
             force(libs.kotlin.stdlib)
             force(libs.kotlin.stdlib.jdk7)
             force(libs.kotlin.stdlib.jdk8)
@@ -22,6 +28,7 @@ allprojects {
             force(libs.kotlinx.coroutines.core.jvm)
             force(libs.kotlinx.coroutines.android)
             force(libs.kotlinx.coroutines.swing)
+            force(libs.okio)
         }
     }
 }

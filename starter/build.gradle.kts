@@ -44,6 +44,11 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
+            implementation(libs.androidx.annotation)
+            implementation(libs.androidx.annotation.experimental)
+            implementation(libs.androidx.collection)
+            implementation(libs.androidx.datastore)
+            implementation(libs.androidx.datastore.preferences)
         }
 
         commonTest.dependencies {
