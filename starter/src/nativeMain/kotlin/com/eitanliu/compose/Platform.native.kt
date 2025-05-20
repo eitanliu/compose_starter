@@ -1,7 +1,7 @@
 package com.eitanliu.compose
 
-class AndroidPlatform : Platform {
+class NativePlatform : Platform {
     override val name: String = "Native"
 }
 
-actual fun getPlatform(): Platform = AndroidPlatform()
+actual fun getPlatform(): Platform = NativePlatform()

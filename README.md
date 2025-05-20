@@ -33,3 +33,8 @@ dependencies {
     implementation("com.github.eitanliu.compose_starter:starter:1.0.0")
 }
 ```
+
+### Doc
+
+[Kotlin Multiplatform Development](https://www.jetbrains.com/help/kotlin-multiplatform-dev)  
+[Kotlin Multiplatform Overview | Android](https://developer.android.com/kotlin/multiplatform)  

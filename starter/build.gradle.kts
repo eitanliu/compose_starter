@@ -1,5 +1,8 @@
 import com.android.build.api.dsl.androidLibrary
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 
+apply(from = rootProject.file("gradle/publish_jitpack.gradle.kts"))
 plugins {
     alias(libs.plugins.android.multiplatform)
     alias(libs.plugins.compose.multiplatform)
@@ -16,14 +19,15 @@ kotlin {
         namespace = "com.eitanliu.compose"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
-
-        // compilations {
-        //     all {
-        //         kotlinOptions {
-        //             jvmTarget = JvmTarget.JVM_1_8.target
-        //         }
-        //     }
-        // }
+        compilations.configureEach {
+            compileTaskProvider.configure {
+                compilerOptions {
+                    if (this is KotlinJvmCompilerOptions) {
+                        jvmTarget.set(JvmTarget.JVM_11)
+                    }
+                }
+            }
+        }
     }
 
     listOf(
@@ -41,6 +45,7 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
         }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }

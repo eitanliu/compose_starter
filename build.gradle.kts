@@ -8,3 +8,20 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlin.multiplatform) apply false
 }
+
+allprojects {
+
+    configurations.all {
+        resolutionStrategy {
+            force(libs.androidx.core)
+            force(libs.androidx.core.ktx)
+            force(libs.kotlin.stdlib)
+            force(libs.kotlin.stdlib.jdk7)
+            force(libs.kotlin.stdlib.jdk8)
+            force(libs.kotlinx.coroutines.core)
+            force(libs.kotlinx.coroutines.core.jvm)
+            force(libs.kotlinx.coroutines.android)
+            force(libs.kotlinx.coroutines.swing)
+        }
+    }
+}
