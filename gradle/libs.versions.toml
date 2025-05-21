@@ -14,9 +14,10 @@ androidx-datastore = "1.1.6"
 androidx-espresso = "3.6.1"
 androidx-lifecycle = "2.9.0"
 androidx-test-ext = "1.2.1"
-compose-bom = "2025.04.01"
+compose-bom = "2025.05.00"
+compose-core = "1.1.0-alpha03"
 compose-hot-reload = "1.0.0-alpha09"
-compose-multiplatform = "1.8.0"
+compose-multiplatform = "1.8.1"
 compose-navigation = "2.9.0-alpha17"
 junit = "4.13.2"
 kotlin = "2.1.21"
@@ -53,16 +54,53 @@ androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-
 androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-okio  = { module = "com.squareup.okio:okio", version.ref = "okio" }
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 
 # Compose
 # https://developer.android.com/develop/ui/compose/bom/bom-mapping
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+# https://klibs.io/project/JetBrains/compose-multiplatform
+compose-animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose-multiplatform" }
+compose-animationGraphics = { module = "org.jetbrains.compose.animation:animation-graphics", version.ref = "compose-multiplatform" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose-multiplatform" }
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose-multiplatform" }
+compose-runtimeSaveable = { module = "org.jetbrains.compose.runtime:runtime-saveable", version.ref = "compose-multiplatform" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose-multiplatform" }
+compose-uiTest = { module = "org.jetbrains.compose.ui:ui-test", version.ref = "compose-multiplatform" }
+compose-uiTooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "compose-multiplatform" }
+compose-uiUtil = { module = "org.jetbrains.compose.ui:ui-util", version.ref = "compose-multiplatform" }
+compose-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose-multiplatform" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose-multiplatform" }
+compose-components-uiToolingPreview = { module = "org.jetbrains.compose.components:components-ui-tooling-preview", version.ref = "compose-multiplatform" }
+compose-desktop = { module = "org.jetbrains.compose.desktop:desktop", version.ref = "compose-multiplatform" }
+compose-desktop-components-splitPane = { module = "org.jetbrains.compose.components:components-splitpane", version.ref = "compose-multiplatform" }
+compose-desktop-components-animatedImage = { module = "org.jetbrains.compose.components:components-animatedimage", version.ref = "compose-multiplatform" }
+compose-desktop-linuxX64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-linux-x64", version.ref = "compose-multiplatform" }
+compose-desktop-linuxArm64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-linux-arm64", version.ref = "compose-multiplatform" }
+compose-desktop-macosX64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-macos-x64", version.ref = "compose-multiplatform" }
+compose-desktop-macosArm64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-macos-arm64", version.ref = "compose-multiplatform" }
+compose-desktop-windowsX64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-windows-x64", version.ref = "compose-multiplatform" }
+compose-desktop-windowsArm64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-windows-arm64", version.ref = "compose-multiplatform" }
+compose-desktop-uiTestJUnit4 = { module = "org.jetbrains.compose.ui:ui-test-junit4", version.ref = "compose-multiplatform" }
+compose-material = { module = "org.jetbrains.compose.material:material", version.ref = "compose-multiplatform" }
+compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose-multiplatform" }
+compose-material3AdaptiveNavigationSuite = { module = "org.jetbrains.compose.material3:material3-adaptive-navigation-suite", version.ref = "compose-multiplatform" }
+# https://klibs.io/package/org.jetbrains.androidx.core/core-bundle
+compose-core-bundle = { module = "org.jetbrains.androidx.core:core-bundle", version.ref = "compose-core" }
+compose-core-uri = { module = "org.jetbrains.androidx.core:core-uri", version.ref = "compose-core" }
+# https://maven.pkg.jetbrains.space/public/p/compose/dev/org/jetbrains/androidx/lifecycle/
+compose-lifecycle-common = { module = "org.jetbrains.androidx.lifecycle:lifecycle-common", version.ref = "androidx-lifecycle" }
+compose-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+compose-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+compose-lifecycle-viewmodel-savedstate = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
+compose-lifecycle-runtime = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
+compose-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 # https://central.sonatype.com/artifact/org.jetbrains.androidx.navigation/navigation-compose
 # https://maven.pkg.jetbrains.space/public/p/compose/dev/org/jetbrains/androidx/navigation/navigation-compose/
 compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 
 # Kotlin
+# https://klibs.io/organization/Kotlin
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-stdlib-jdk7 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
@@ -79,6 +117,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 android-multiplatform = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 compose-hot-reload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload" }
 # https://mvnrepository.com/artifact/org.jetbrains.compose/org.jetbrains.compose.gradle.plugin
+# https://maven.pkg.jetbrains.space/public/p/compose/dev/org/jetbrains/compose/org.jetbrains.compose.gradle.plugin/
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

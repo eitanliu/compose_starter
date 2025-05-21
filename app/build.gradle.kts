@@ -57,8 +57,10 @@ kotlin {
 
             implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
             implementation(project.dependencies.platform(libs.compose.bom))
-            implementation(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.compose.core.bundle)
+            implementation(libs.compose.core.uri)
+            implementation(libs.compose.lifecycle.viewmodel)
+            implementation(libs.compose.lifecycle.runtime.compose)
             implementation(libs.compose.navigation)
         }
 
