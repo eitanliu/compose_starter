@@ -57,12 +57,14 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
 
-            implementation(libs.kotlinx.coroutines.core)
+            implementation(project.dependencies.platform(libs.androidx.compose.bom))
             implementation(libs.compose.core.bundle)
             implementation(libs.compose.core.uri)
             implementation(libs.compose.lifecycle.viewmodel)
             implementation(libs.compose.lifecycle.runtime.compose)
             implementation(libs.compose.navigation)
+
+            implementation(libs.kotlinx.coroutines.core)
         }
 
         commonTest.dependencies {
@@ -71,7 +73,6 @@ kotlin {
 
         androidMain.dependencies {
             implementation(compose.preview)
-            implementation(project.dependencies.platform(libs.compose.bom))
             implementation(libs.androidx.activity.compose)
         }
 
