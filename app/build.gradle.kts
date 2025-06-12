@@ -57,8 +57,7 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
 
-            implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
-            implementation(project.dependencies.platform(libs.compose.bom))
+            implementation(libs.kotlinx.coroutines.core)
             implementation(libs.compose.core.bundle)
             implementation(libs.compose.core.uri)
             implementation(libs.compose.lifecycle.viewmodel)
@@ -72,6 +71,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(compose.preview)
+            implementation(project.dependencies.platform(libs.compose.bom))
             implementation(libs.androidx.activity.compose)
         }
 
