@@ -64,6 +64,8 @@ kotlin {
             implementation(libs.compose.lifecycle.viewmodel)
             implementation(libs.compose.lifecycle.runtime.compose)
             implementation(libs.compose.navigation)
+
+            implementation(libs.kotlinx.coroutines.core)
         }
 
         commonTest.dependencies {
