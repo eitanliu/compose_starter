@@ -14,6 +14,7 @@ androidx-datastore = "1.1.7"
 androidx-espresso = "3.6.1"
 androidx-lifecycle = "2.9.1"
 androidx-test-ext = "1.2.1"
+androidx-navigation = "2.9.1"
 
 androidx-compose-bom = "2025.06.00"
 androidx-compose-animation = "1.8.2"
@@ -75,6 +76,7 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 
 # Compose
 # https://developer.android.com/develop/ui/compose/bom/bom-mapping
+# https://maven.google.com/androidx/compose/compose-bom/2025.06.00/compose-bom-2025.06.00.pom
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "androidx-compose-bom" }
 # Animation
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose-animation" }
@@ -101,6 +103,7 @@ androidx-compose-material-icons-extended = { module = "androidx.compose.material
 androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-compose-material3" }
 androidx-compose-material3-adaptive = { module = "androidx.compose.material3.adaptive:adaptive", version.ref = "androidx-compose-material3-adaptive" }
 androidx-compose-material3-adaptive-navigation = { module = "androidx.compose.material3.adaptive:adaptive-navigation", version.ref = "androidx-compose-material3-adaptive" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
 # https://klibs.io/project/JetBrains/compose-multiplatform
 compose-animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose-multiplatform" }
 compose-animationGraphics = { module = "org.jetbrains.compose.animation:animation-graphics", version.ref = "compose-multiplatform" }
