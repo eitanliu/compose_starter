@@ -58,7 +58,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
 
             implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
-            implementation(project.dependencies.platform(libs.compose.bom))
+            implementation(project.dependencies.platform(libs.androidx.compose.bom))
             implementation(libs.compose.core.bundle)
             implementation(libs.compose.core.uri)
             implementation(libs.compose.lifecycle.viewmodel)

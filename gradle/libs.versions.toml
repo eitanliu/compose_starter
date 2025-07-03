@@ -6,22 +6,27 @@ android-minSdk = "24"
 androidx-annotation = "1.9.1"
 androidx-annotation-experimental = "1.5.0"
 androidx-activity = "1.10.1"
-androidx-appcompat = "1.7.0"
+androidx-appcompat = "1.7.1"
 androidx-constraintlayout = "2.2.1"
 androidx-collection = "1.5.0"
 androidx-core = "1.16.0"
-androidx-datastore = "1.1.6"
+androidx-datastore = "1.1.7"
 androidx-espresso = "3.6.1"
-androidx-lifecycle = "2.9.0"
+androidx-lifecycle = "2.9.1"
 androidx-test-ext = "1.2.1"
-compose-bom = "2025.05.00"
+androidx-navigation = "2.9.1"
+compose-bom = "2025.06.00"
 compose-core = "1.1.0-alpha03"
 compose-hot-reload = "1.0.0-alpha09"
-compose-multiplatform = "1.8.1"
-compose-navigation = "2.9.0-alpha17"
+compose-multiplatform = "1.8.2"
+compose-navigation = "2.9.0-beta03"
 junit = "4.13.2"
 kotlin = "2.1.21"
 kotlinx-coroutines = "1.10.2"
+kotlinx-serialization = "1.8.1"
+kotlinx-io = "0.7.0"
+kotlinx-datetime = "0.6.2"
+ktor = "3.1.0"
 
 okio = "3.11.0"
 
@@ -29,16 +34,30 @@ okio = "3.11.0"
 # Testing
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso" }
 androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext" }
+# https://kotlinlang.org/api/core/kotlin-test/
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
 
-# AndroidX
+# Android
+# https://developer.android.com/jetpack/androidx/versions
+# https://developer.android.com/kotlin/ktx/extensions-list
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
 
-# Multiplatform
+# Android Compose
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+
+# Android Multiplatform
+# https://developer.android.com/kotlin/multiplatform
 androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidx-annotation" }
 androidx-annotation-experimental = { module = "androidx.annotation:annotation-experimental", version.ref = "androidx-annotation-experimental" }
 androidx-collection = { module = "androidx.collection:collection", version.ref = "androidx-collection" }
@@ -54,11 +73,8 @@ androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-
 androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 
 # Compose
-# https://developer.android.com/develop/ui/compose/bom/bom-mapping
-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
 # https://klibs.io/project/JetBrains/compose-multiplatform
 compose-animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose-multiplatform" }
 compose-animationGraphics = { module = "org.jetbrains.compose.animation:animation-graphics", version.ref = "compose-multiplatform" }
@@ -101,14 +117,70 @@ compose-navigation = { module = "org.jetbrains.androidx.navigation:navigation-co
 
 # Kotlin
 # https://klibs.io/organization/Kotlin
+# https://kotlinlang.org/api/core/
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-stdlib-jdk7 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlin-stdlib-jdk9 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk9", version.ref = "kotlin" }
+kotlin-stdlib-js = { module = "org.jetbrains.kotlin:kotlin-stdlib-js", version.ref = "kotlin" }
+kotlin-stdlib-wasm-js = { module = "org.jetbrains.kotlin:kotlin-stdlib-wasm-js", version.ref = "kotlin" }
+kotlin-stdlib-wasm-wasi = { module = "org.jetbrains.kotlin:kotlin-stdlib-wasm-wasi", version.ref = "kotlin" }
+# https://kotlinlang.org/api/kotlinx-metadata-jvm/
+kotlin-metadata-jvm = { module = "org.jetbrains.kotlin:kotlin-metadata-jvm", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+# https://kotlinlang.org/api/kotlinx.coroutines/
 kotlinx-coroutines-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core-jvm = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-guava = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-guava", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-play = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+# https://kotlinlang.org/api/kotlinx.serialization/
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-cbor = { module = "org.jetbrains.kotlinx:kotlinx-serialization-cbor", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json-io = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-io", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json-okio = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-okio", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-properties = { module = "org.jetbrains.kotlinx:kotlinx-serialization-properties", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-hocon = { module = "org.jetbrains.kotlinx:kotlinx-serialization-hocon", version.ref = "kotlinx-serialization" }
+# https://kotlinlang.org/api/kotlinx-io/
+kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinx-io" }
+kotlinx-io-bytestring = { module = "org.jetbrains.kotlinx:kotlinx-io-bytestring", version.ref = "kotlinx-io" }
+kotlinx-io-okio = { module = "org.jetbrains.kotlinx:kotlinx-io-okio", version.ref = "kotlinx-io" }
+# https://kotlinlang.org/api/kotlinx-datetime/
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+# https://api.ktor.io/
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+# https://ktor.io/docs/client-engines.html
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-curl = { module = "io.ktor:ktor-client-curl", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-winhttp = { module = "io.ktor:ktor-client-winhttp", version.ref = "ktor" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-encoding = { module = "io.ktor:ktor-client-encoding", version.ref = "ktor" }
+ktor-client-json = { module = "io.ktor:ktor-client-json", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-events = { module = "io.ktor:ktor-events", version.ref = "ktor" }
+ktor-http = { module = "io.ktor:ktor-http", version.ref = "ktor" }
+ktor-http-cio = { module = "io.ktor:ktor-http-cio", version.ref = "ktor" }
+ktor-io = { module = "io.ktor:ktor-io", version.ref = "ktor" }
+ktor-network = { module = "io.ktor:ktor-network", version.ref = "ktor" }
+ktor-network-tls = { module = "io.ktor:ktor-network-tls", version.ref = "ktor" }
+ktor-network-tls-certificates = { module = "io.ktor:ktor-network-tls-certificates", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "ktor" }
+ktor-serialization-kotlinx = { module = "io.ktor:ktor-serialization-kotlinx", version.ref = "ktor" }
+ktor-serialization-kotlinx-cbor = { module = "io.ktor:ktor-serialization-kotlinx-cbor", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-serialization-kotlinx-protobuf = { module = "io.ktor:ktor-serialization-kotlinx-protobuf", version.ref = "ktor" }
+ktor-serialization-kotlinx-xml = { module = "io.ktor:ktor-serialization-kotlinx-xml", version.ref = "ktor" }
+
+# Multiplatform
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
