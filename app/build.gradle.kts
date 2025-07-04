@@ -123,8 +123,22 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    signingConfigs {
+        getByName("debug") {
+            storeFile = rootProject.file("debug.jks")
+            storePassword = "debug1"
+            keyAlias = "debug"
+            keyPassword = "debug1"
+        }
+    }
+
     buildTypes {
-        getByName("release") {
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+
+        release {
             isMinifyEnabled = false
         }
     }
