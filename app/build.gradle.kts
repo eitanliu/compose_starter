@@ -57,14 +57,26 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
 
-            implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
-            implementation(project.dependencies.platform(libs.androidx.compose.bom))
             implementation(libs.compose.core.bundle)
             implementation(libs.compose.core.uri)
             implementation(libs.compose.lifecycle.viewmodel)
             implementation(libs.compose.lifecycle.runtime.compose)
             implementation(libs.compose.navigation)
 
+            implementation(project.dependencies.platform(libs.androidx.compose.bom))
+            // implementation(libs.androidx.compose.animation)
+            // implementation(libs.androidx.compose.animation.graphics)
+            // implementation(libs.androidx.compose.runtime)
+            // implementation(libs.androidx.compose.foundation)
+            // implementation(libs.androidx.compose.ui)
+            // implementation(libs.androidx.compose.material3)
+            // implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
+            // implementation(libs.androidx.compose.material.icons.extended)
+            // implementation(libs.androidx.navigation.ui)
+            // implementation(libs.androidx.navigation3.runtime)
+            // implementation(libs.androidx.navigation3.ui)
+
+            implementation(project.dependencies.platform(libs.kotlinx.coroutines.bom))
             implementation(libs.kotlinx.coroutines.core)
         }
 
