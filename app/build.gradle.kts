@@ -63,7 +63,8 @@ kotlin {
             implementation(libs.compose.core.uri)
             implementation(libs.compose.lifecycle.viewmodel)
             implementation(libs.compose.lifecycle.runtime.compose)
-            implementation(libs.compose.navigation)
+            // implementation(libs.compose.navigation)
+            implementation(libs.compose.navigation3)
 
             implementation(libs.kotlinx.coroutines.core)
         }
